@@ -17,5 +17,6 @@ jobs:
       - name: 'call workflow'
         uses: benc-uk/workflow-dispatch@v1
         with:
+          ref: ${{ github.head_ref }}
           workflow: myworkflow.yml
           inputs: '{ "name": "louise","greeting": "Hi" }'
