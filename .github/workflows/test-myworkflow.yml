@@ -18,4 +18,5 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: myworkflow.yml
+          token: ${{ secrets.GITHUB_TOKEN }}
           inputs: '{ "name": "louise","greeting": "Hi" }'
