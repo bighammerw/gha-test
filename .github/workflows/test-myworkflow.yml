@@ -1,4 +1,4 @@
-name: Test Argo Rollouts Watch Action
+name: Test myowrkflow Action
 on:
   pull_request:
     paths:
