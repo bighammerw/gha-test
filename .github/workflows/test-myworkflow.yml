@@ -18,4 +18,4 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: myworkflow.yml
-          inputs: '{ "name": louise,"greeting": Hi }'
+          inputs: '{ "name": "louise","greeting": "Hi" }'
