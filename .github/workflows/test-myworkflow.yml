@@ -1,0 +1,21 @@
+name: Test Argo Rollouts Watch Action
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/myworkflow.yml'
+      - '.github/workflows/test-myworkflow.yml'
+  workflow_dispatch:
+
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+        
+      - name: 'call workflow'
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: myworkflow.yml
+          inputs: '{ "name": louise,"greeting": Hi }'
