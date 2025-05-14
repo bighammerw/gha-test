@@ -15,11 +15,26 @@ on:
         description: 'time'
         required: false
         default: '2025'
+      file_path: 
+        description: 'Path to the file in the submodule'
+        required: true
+        default: 'test-data/test-data.txt'
+
 
 jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+        with:
+          submodules: 'true'
       - name: print greeting
         run: |
           echo "${{ github.event.inputs.greeting }}, ${{ github.event.inputs.name }}! ${{ github.event.inputs.time }}"
+      - name: Read file from submodule
+        id: read_file
+        run: |
+          FILE_PATH="${{ github.event.inputs.file_path }}"
+          echo "File content:"
+          cat "$FILE_PATH"
