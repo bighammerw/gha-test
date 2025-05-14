@@ -11,6 +11,10 @@ on:
         description: 'greeting'
         required: false
         default: 'Hello'
+      time:
+        description: 'time'
+        required: false
+        default: '2025'
 
 jobs:
   greet:
@@ -18,4 +22,4 @@ jobs:
     steps:
       - name: print greeting
         run: |
-          echo "${{ github.event.inputs.greeting }}, ${{ github.event.inputs.name }}!"
+          echo "${{ github.event.inputs.greeting }}, ${{ github.event.inputs.name }}! ${{ github.event.inputs.time }}"
