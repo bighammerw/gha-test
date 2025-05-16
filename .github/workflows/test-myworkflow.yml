@@ -19,4 +19,4 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           workflow: myworkflow.yml
-          inputs: '{ "name": "louise","greeting": "Hi" }'
+          inputs: '{ "name": "louise","greeting": "Hi","time":"2026"}'
